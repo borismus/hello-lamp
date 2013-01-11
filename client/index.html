@@ -1,0 +1,40 @@
+<style>
+#lamp {
+  float: left;
+  background-image: url(images/lamp-off.png);
+  width: 128px;
+  height: 128px;
+}
+#lamp.on {
+  background-image: url(images/lamp-on.png);
+}
+
+#switch {
+  float: left;
+  background-image: url(images/switch-off.png);
+  background-size: 101%;
+  width: 35px;
+  height: 50px;
+}
+#switch.on {
+  background-image: url(images/switch-on.png);
+}
+
+#debug { display: none; }
+#command::before { content: '> '; }
+</style>
+
+<div id="debug">
+  <button onclick="lamp.on()">On</button>
+  <button onclick="lamp.off()">Off</button>
+  <div id="command"></div>
+</div>
+
+
+<div id="lamp"></div>
+<div id="switch" onclick="lamp.toggle()"></div>
+
+<script src="js/lamp-controller.js"></script>
+<script src="js/speech-engine.js"></script>
+<script src="js/main.js"></script>
+
